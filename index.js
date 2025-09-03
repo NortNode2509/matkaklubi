@@ -5,7 +5,7 @@ import * as path from 'path';
 import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { getHikes } from './api_controller/index.js'
-import { getIndexView, getContactView } from './controller/index.js';
+import { getIndexView, getContactView, getHikeView } from './controller/index.js';
     
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -23,6 +23,7 @@ app.get('/api/matkad', getHikes);
 
 app.get('/', getIndexView);
 app.get('/kontakt', getContactView);
+app.get('/matk', getHikeView);
 
 const PORT = process.env.PORT || 3300;
 
