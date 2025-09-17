@@ -1,0 +1,25 @@
+### Get all hikes
+GET http://localhost:3700/api/matkad
+
+### Get one hike. with id 
+GET http://localhost:3700/api/matkad/1
+
+
+### Insert one hike
+POST http://localhost:3700/api/matkad
+Content-Type: application/json
+
+{
+    "name": "Süstamakt Soomaal",
+    "startDate": "10.05.2026",
+    "urlToPicture": "/assets/syst1.jpg"
+}
+
+### Delete on hike 
+DELETE  http://localhost:3700/api/matkad/555
+
+PATCH   http://localhost:3700/api/matkad/1
+Content-Type: application/json
+{
+    "start_date": "10.05.2026"
+}

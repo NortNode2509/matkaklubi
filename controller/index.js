@@ -1,13 +1,33 @@
+import { getOneHike, getHikesData } from "../data/index.js"
+
+function showError(res, error) {
+  res.send(`
+            <h1>Andmete lugemisel tuli viga</h1>
+              ${error.message}
+
+              <a href="/">Tagasi</a>
+            `)
+}
+
 export function getIndexView(req, res) {
-    res.render('index')
+  try {
+    const hikes = getHikesData()
+    res.render("index", { hikes })
+  } catch (error) {
+    showError(res, error)
+  }
 }
 
 export function getContactView(req, res) {
-    res.render('kontakt')
+  res.render("kontakt")
 }
 
 export function getHikeView(req, res) {
-    //TODO - loe andmed data kihist etteantud matka id järgi ning renderda malli abil
-    const hike = {name: 'Test'}
-    res.render('hike', { matk: hike } )
+  //TODO - loe andmed data kihist etteantud matka id järgi ning renderda malli abil
+  try {
+    const hike = getOneHike(req.query.id)
+    res.render("hike", { matk: hike })
+  } catch (error) {
+    showError(res, error)
+  }
 }

@@ -50,6 +50,17 @@
                     <img src="./assets/Shadow.png" class="vari" alt="">
                 </div>
             </div>
+            <div class="hikes-container">
+                <% for (let i = 0; i < hikes.length; i++) { %>
+                    <div class="hike-overview">
+                        <%= hikes[i].name %>
+                        <div>
+                            <img src="<%= hikes[i].urlToPicture %>">
+                        </div>
+                        <a  href="/matk?id=<%= hikes[i].id %>" class="btn">Loe edasi</a>
+                    </div>
+                <% } %>
+            </div>
         </div>
     </div>
 
