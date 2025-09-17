@@ -1,4 +1,4 @@
-import { getOneHike, getHikesData } from "../data/index.js"
+import { getOneHikeData, getHikesData } from "../data/index.js"
 
 function showError(res, error) {
   res.send(`
@@ -25,7 +25,7 @@ export function getContactView(req, res) {
 export function getHikeView(req, res) {
   //TODO - loe andmed data kihist etteantud matka id järgi ning renderda malli abil
   try {
-    const hike = getOneHike(req.query.id)
+    const hike = getOneHikeData(req.query.id)
     res.render("hike", { matk: hike })
   } catch (error) {
     showError(res, error)

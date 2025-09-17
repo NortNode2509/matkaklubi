@@ -1,4 +1,8 @@
-const allHikes = [
+import {
+  getAllHikeParticipantsData,
+  addParticipantToHikeData
+} from "./participants.js"
+let allHikes = [
   {
     id: 1,
     name: "Kanuumatk Hiiumaal",
@@ -26,7 +30,7 @@ export function getHikesData() {
   return allHikes
 }
 
-export function getOneHike(id) {
+export function getOneHikeData(id) {
   const hike = allHikes.find((elem) => {
     return elem.id == id
   })
@@ -53,3 +57,9 @@ export function addHikeData({
     urlToPicture
   })
 }
+
+export function deleteOneHikeData(id) {
+  allHikes = allHikes.filter((hike) => Number(id) !== hike.id)
+}
+
+export { addParticipantToHikeData, getAllHikeParticipantsData }

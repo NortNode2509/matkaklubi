@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="/matk.js"></script>
 </head>
 <body>
     <div class="container">
@@ -32,6 +33,21 @@
             </div>
             <img class="hike-main-picture" src="<%= matk.urlToPicture %>">
             
+        </div>
+        <div>
+            <input 
+                type="text"
+                placeholder="Nimi"
+                id="participantName"
+            >
+            <input
+                type="email"
+                placeholder="email"
+                id="participantEmail"
+            >
+            <button onclick="registrationToHike()">
+                Registreeru matkale
+            </button>
         </div>
     </div>
 
