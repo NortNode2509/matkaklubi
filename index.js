@@ -15,7 +15,8 @@ import {
 import {
   getIndexView,
   getContactView,
-  getHikeView
+  getHikeView,
+  getAdminView
 } from "./controller/index.js"
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -41,6 +42,7 @@ app.post("/api/matkad/:hikeId/osalejad", addParticipantToHike)
 app.get("/", getIndexView)
 app.get("/kontakt", getContactView)
 app.get("/matk", getHikeView)
+app.get("/admin", getAdminView)
 
 //TODO - kõigil muudel aadressidel näita 404 lehte
 

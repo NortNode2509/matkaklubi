@@ -31,3 +31,7 @@ export function getHikeView(req, res) {
     showError(res, error)
   }
 }
+
+export function getAdminView(req, res) {
+  res.render("admin")
+}

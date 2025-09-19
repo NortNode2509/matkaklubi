@@ -25,10 +25,10 @@ Content-Type: application/json
 }
 
 ### Get all participants of one hike
-GET http://localhost:3700/api/matkad/2/osalejad
+GET http://localhost:3700/api/matkad/3/osalejad
 
 ### Add participant to the hike (registration)
-POST http://localhost:3700/api/matkad/2/osalejad
+POST http://localhost:3700/api/matkad/3/osalejad
 Content-Type: application/json
 
 {
